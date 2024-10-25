@@ -10,7 +10,11 @@ screen.title("My Snake Game")
 
 segments = snake.Snake()
 
-screen.update()
+screen.listen()
+screen.onkey(segments.up, "Up")
+screen.onkey(segments.down, "Down")
+screen.onkey(segments.left, "Left")
+screen.onkey(segments.right, "Right")
 
 game_is_on = True
 while game_is_on:
