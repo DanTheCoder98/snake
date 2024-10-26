@@ -35,10 +35,8 @@ while game_is_on:
         game_is_on = False
         score_board.game_over()
 
-    for seg in segments.segments:
-        if seg == segments.head:
-            pass
-        elif segments.head.distance(seg) < 10:
+    for seg in segments.segments[1:]:
+        if segments.head.distance(seg) < 10:
             game_is_on = False
             score_board.game_over()
 
