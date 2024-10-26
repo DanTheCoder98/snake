@@ -35,6 +35,11 @@ while game_is_on:
         game_is_on = False
         score_board.game_over()
 
-    
+    for seg in segments:
+        if seg == segments.head:
+            pass
+        elif segments.head.distance() < 10:
+            game_is_on = False
+            score_board.game_over()
 
 screen.exitonclick()
