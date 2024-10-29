@@ -3,15 +3,13 @@ import turtle
 ALIGNMENT = "center"
 FONT = ("Arial", 24, "normal")
 
-with open("data.txt", "r") as data:
-    high_score = int(data.read())
-
 
 class ScoreBoard(turtle.Turtle):
     def __init__(self):
         super().__init__()
         self.score = 0
-        self.high_score = high_score
+        with open("data.txt", "r") as data:
+            self.high_score = int(data.read())
         self.color("white")
         self.hideturtle()
         self.penup()
