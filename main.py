@@ -31,13 +31,16 @@ while game_is_on:
         segments.extend()
         score_board.increase_score()
 
-    if segments.head.xcor() > 280 or segments.head.xcor() < -280 or segments.head.ycor() > 280 or segments.head.ycor() < -280:
-        game_is_on = False
-        score_board.game_over()
+    if (
+        segments.head.xcor() > 280
+        or segments.head.xcor() < -280
+        or segments.head.ycor() > 280
+        or segments.head.ycor() < -280
+    ):
+        score_board.reset()
 
     for seg in segments.segments[1:]:
         if segments.head.distance(seg) < 10:
-            game_is_on = False
-            score_board.game_over()
+            score_board.reset()
 
 screen.exitonclick()
