@@ -38,9 +38,11 @@ while game_is_on:
         or segments.head.ycor() < -280
     ):
         score_board.reset()
+        segments.reset()
 
     for seg in segments.segments[1:]:
         if segments.head.distance(seg) < 10:
             score_board.reset()
+            segments.reset()
 
 screen.exitonclick()
